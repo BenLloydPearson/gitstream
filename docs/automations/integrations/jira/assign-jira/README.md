@@ -1,0 +1,1 @@
+--8<-- "docs/downloads/automation-library/integrations/jira/assign_jira.cm"
