@@ -21,3 +21,10 @@ Learn how to integrate gitStream with [Jira](https://www.atlassian.com/software/
 --8<-- "docs/snippets/context-automation.md"
 
 --8<-- "docs/snippets/automation-footer.md"
+## Update Jira
+
+--8<-- "docs/automations/integrations/jira/update-jira/README.md:example"
+
+## Assign Jira
+
+--8<-- "docs/automations/integrations/jira/assign-jira/README.md:example"
