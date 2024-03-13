@@ -1,0 +1,27 @@
+# -*- mode: yaml -*-
+
+manifest:
+  version: 1.0
+
+provider: jira
+
+orgName: #your Jira organization name here
+
+{% set ticketid = "" %}
+{% for ticket in tickets %}
+{% if (ticket | includes(regex=r/.+/)) %}
+{% set ticketid = ticket %}
+{% endif %}
+{% endfor %}
+
+automations:
+  update_jira:
+    if:
+      - {{ has.ticket_in_title or has.ticket_in_branch }}
+    run:
+      - action: send-http-request@v1
+        args:
+          url: "https://automation.atlassian.com/pro/hooks/__AUTOMATION_WEBHOOK_URL__"
+          method: POST
+          headers: '{"Content-type": "application/json"}'
+          body: '{"issues":["{{ticketid}}"]}'
