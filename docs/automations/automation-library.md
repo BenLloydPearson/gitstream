@@ -31,6 +31,7 @@ This library of gitStream examples is meant to serve as a starting point for you
 * [Label deleted files](label-deleted-files/README.md) - Label PRs that delete files.
 * [Label missing project tracker](label-missing-project-tracker/README.md) - Flag PRs that are missing a reference to an associated project tracking resource.
 * [Automatic project tracking links](standard/link-issue-tracker/README.md) - Automatically post PR comments that link to the associated project tracking resource (Jira, Shortcut, Azure Boards, and more).
+* [Summarize PR contents by language](standard/summarize-language-changes/README.md) - Post a comment that breaks down code changes by the programming languages contained in the PR.
 
 ## Improve PR Quality
 ### Merge Routing
@@ -48,21 +49,16 @@ This library of gitStream examples is meant to serve as a starting point for you
 * [Welcome newcomer](welcome-newcomer/README.md) - Post a welcome message when someone makes their first PR to a repo, and provide context to help them know what's next.
 * [Remove TODO comments](standard/review-todo-comments/README.md) - Detect TODO comments in PRs and ask the author to remove or fix them.
 
-## Measure and Track Generative AI Usage
-
-These examples help you label PRs where Generative AI was used to generate code.
-
-* [Label by Preset Contributors](genai/label-by-contributors/README.md) - Label PRs authored by a specific set of contributors.
-* [Label by Extracted Hint](genai/label-by-hint/README.md) - Label PRs using a hint in the PR title, description, comments or commit messages.
-* [Ask in a Prompt and Label](genai/prompt-and-label/README.md) - Prompt the PR author to specify whether the PR was assisted by Generative AI using a comment and label accordingly.
-
 ## Security and Policy Compliance
 These examples help you follow your team's security best practices.
 
 * [Change deprecated components](change-deprecated-components/README.md) - Request changes when a PR includes one or more deprecated components.
 * [Enforce copyright headers](standard/enforce-copyright-header/README.md) - Enforce the use of copyright headers when publishing open source code.
 
+## Third-party Integrations
+
 --8<-- "docs/integrations/README.md:integrations"
+
 ## Utilities
 These examples provide useful components to use in other automations. These aren't intended to be used on their own; instead they act as a reference point for improving other automations.
 

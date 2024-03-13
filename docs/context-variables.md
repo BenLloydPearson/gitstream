@@ -105,7 +105,7 @@ The `branch` context contains info regarding the branch changes compared to the 
 | `branch.author_name`      | String    | The branch author name        |
 | `branch.author_email`      | String    | The branch author email       |
 | `branch.base`        | String    | The main branch, `main`                 |
-| :octicons-beaker-24: `branch.commits.messages` | [String] | A list with all the commit messages in this branch  |
+| `branch.commits.messages` | [String] | A list with all the commit messages in this branch  |
 | `branch.diff.size`   | Integer   | The sum of line changed: additions, edits and deletions   |
 | `branch.diff.files_metadata`  | [`FileMetadata`](#filemetadata-structure)  | List of changed files including their relative path      |
 | `branch.name`        | String    | The current branch, `feature-123-branch`                 |
@@ -143,15 +143,17 @@ automations:
 
 The `env` context allows the user to pass data from the repo that is unavailable in the other context variables. Thus, the structure of the variable is not fixed and depends on user configuration.
 
-To configure the `env` variable, add the `env` field to gitstream's workflow job configurations on `.github/workflows/gitstream.yml`, under the `Evaluate Rules` step. For more information, visit GitHub's guide for [Using secrets in GitHub Actions](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions)
-The `env` field 
+To configure the `env` variable, add the `env` field to gitstream's workflow job configurations on `.github/workflows/gitstream.yml`. For more information, visit GitHub's guide for [Using secrets in GitHub Actions](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions)
+ 
 ```yaml title="examle: add secrets to the env variable"
 ...
+jobs:
+  gitStream:
+    timeout-minutes: 5
+    runs-on: ubuntu-latest
     name: gitStream workflow automation
-    steps:
-      - name: Evaluate Rules
-        env:
-          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+    env:
+      SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
 ...
 ```
 
@@ -170,7 +172,7 @@ automations:
 
 slack_webhook: {{ env.SLACK_WEBHOOK }}
 ```
-https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions
+
 #### `files`
 
 The `files` context includes the list of changed files in the branch compared to the main branch.
