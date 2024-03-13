@@ -21,3 +21,10 @@ Learn how to integrate gitStream with [Jira](https://www.atlassian.com/software/
 --8<-- "docs/snippets/context-automation.md"
 
 --8<-- "docs/snippets/automation-footer.md"
+## Automatically Update Jira Tickets from PRs
+
+--8<-- "docs/automations/integrations/jira/update-jira-tickets/README.md:example"
+
+## Automatically Assign Jira Tickets from PRs
+
+--8<-- "docs/automations/integrations/jira/assign-jira-tickets/README.md:example"
