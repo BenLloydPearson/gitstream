@@ -18,6 +18,10 @@ Learn how to integrate gitStream with [Jira](https://www.atlassian.com/software/
 
 **Related Automations**:
 
+## Automatically Update Jira Tickets from PRs
+
+--8<-- "docs/automations/integrations/jira/update-jira/README.md:example"
+
 --8<-- "docs/snippets/context-automation.md"
 
 --8<-- "docs/snippets/automation-footer.md"
